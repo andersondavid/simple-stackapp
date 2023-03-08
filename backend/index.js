@@ -17,9 +17,13 @@ const app = express();
 app.use(cors({
   origin: '*'
 }));
+
 app.use(express.json())
+
+// Definindo as para o express
 app.use('/', router)  
-app.use('/users', router)
+app.use('/user', router)
+app.use('/users/:id', router)
 
 
 

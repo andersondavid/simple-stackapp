@@ -1,25 +1,31 @@
 const { Sequelize } = require('sequelize');
 
+// Criando a conexão com o banco de dados
 const conn = new Sequelize('meu_db_aula', 'root', '', {
   host: 'localhost',
   dialect: 'mysql'
 });
 
-// Definindo um modelo para a tabela "usuarios"
-const Usuario = conn.define('usuarios', {
-  nome: {
+// Definindo um modelo para a tabela "users_table"
+const UserModel = conn.define('users_table', {
+  id: {
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  name: {
     type: Sequelize.STRING
   },
   email: {
     type: Sequelize.STRING
   },
-  idade: {
+  age: {
     type: Sequelize.INTEGER
   }
 });
 
 // Sincronizando o modelo com o banco de dados
-conn.sync()
+conn.sync({ alter: true })
   .then(() => {
     console.log('Modelo sincronizado com o banco de dados com sucesso.');
   })
@@ -28,5 +34,5 @@ conn.sync()
   });
 
 module.exports = {
-  Usuario, conn
+  UserModel, conn
 };
