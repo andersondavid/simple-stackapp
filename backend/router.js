@@ -20,7 +20,8 @@ router.get('/users', async (req, res) => {
 });
 
 // Adiciona um usuario
-router.post('/user', async (req, res) => {
+router.post('/adduser', async (req, res) => {
+
   try {
     const { name, email, age } = req.body;
 
@@ -29,6 +30,8 @@ router.post('/user', async (req, res) => {
       email,
       age
     });
+
+    console.log({ name, email, age });
 
     res.status(201).json(user);
   } catch (err) {
@@ -56,7 +59,7 @@ router.get('/user/:id', async (req, res) => {
 });
 
 // Atualiza um usuário por ID
-router.put('/user/:id', async (req, res) => {
+router.put('/updateuser/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { name, email, age } = req.body;
@@ -81,7 +84,9 @@ router.put('/user/:id', async (req, res) => {
 });
 
 // Deleta um usuario por ID
-router.delete('/user/:id', async (req, res) => {
+router.delete('/deleteuser/:id', async (req, res) => {
+
+  console.log(req.params.id);
   try {
     const user = await UserModel.findByPk(req.params.id);
     if (!user) {

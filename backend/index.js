@@ -21,13 +21,11 @@ app.use(cors({
 app.use(express.json())
 
 // Definindo as para o express
-app.use('/', router)  
-app.use('/user', router)
-app.use('/users/:id', router)
+app.use('/', router)
 
 
 
 // Iniciando o servidor
-app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
+app.listen(3001, () => {
+  console.log('Servidor rodando na porta 3001');
 });
