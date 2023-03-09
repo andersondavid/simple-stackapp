@@ -1,0 +1,58 @@
+body {
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+	text-align: center;
+	font-size: 1.1em;
+}
+
+.App {
+	width: 50%;
+	margin: auto;
+}
+
+table {
+	margin: auto;
+	border-collapse: collapse;
+	margin-bottom: 0.5em;
+}
+
+td,
+tr,
+th {
+	margin: 0;
+	border: 1px solid #8b8b8b;
+	padding: 10px;
+}
+
+th {
+	background: #5af;
+	color: #fff;
+	border: #4af;
+}
+
+input,
+button {
+	border: 1px solid #8b8b8b;
+	border-radius: 12px;
+	padding: 10px;
+	box-sizing: border-box;
+	display: block;
+	margin: auto;
+	margin-bottom: 0.5em;
+}
+
+input[type="text"] {
+	width: 50%;
+}
+
+input[type="submit"],
+button {
+	background: #5af;
+	color: #fff;
+	padding: 10px;
+	border: #4af;
+}
+
+label {
+	display: block;
+	margin-left: 1em;
+}
